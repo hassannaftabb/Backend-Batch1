@@ -6,6 +6,8 @@
 
 // fs - File System
 //To Read a File - readFile(synchronous), readFileSync(asynchronous)
+
+//Homework- wirteFile, writefileSync
 const fileSystem = require("fs");
 
 console.log("Before");
