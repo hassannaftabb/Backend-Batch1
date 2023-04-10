@@ -8,11 +8,30 @@
 //To Read a File - readFile(synchronous), readFileSync(asynchronous)
 
 //Homework- wirteFile, writefileSync
-const fileSystem = require("fs");
+// const fileSystem = require("fs");
 
-console.log("Before");
-fileSystem.readFile("hassann.txt", "utf-8", (err, data) => {
-  console.log("Error:", err);
-  console.log("Data:", data);
+// console.log("Before");
+// fileSystem.readFile("hassann.txt", "utf-8", (err, data) => {
+//   console.log("Error:", err);
+//   console.log("Data:", data);
+// });
+// console.log("After");
+
+const http = require("http");
+//Hypertext transfer protocol (secured)
+
+const hostname = "127.0.0.1"; //localhost
+const port = 3000;
+
+//createServer()
+const server = http.createServer((req, res) => {
+  res.statusCode = 200; //for later
+  res.setHeader("Content-Type", "text/html");
+  res.end("<h1>Hello</h1>");
 });
-console.log("After");
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+
+//server.listen(port, hostname, successCallback)
